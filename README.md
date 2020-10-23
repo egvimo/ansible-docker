@@ -29,7 +29,7 @@ docker run --rm -it -v ~/.ssh:/root/.ssh:ro -v $(pwd):/ansible:ro egvimo/ansible
 Use aliases:
 
 ```shell
-alias ansible-playbook='docker run --rm -it -v ~/.ssh:/root/.ssh:ro -v $(pwd):/ansible:ro egvimo/ansible ansible-playbook '
+alias ansible-playbook='docker run --rm -it -v ~/.ssh:/root/.ssh:ro -v $(pwd):/ansible:ro egvimo/ansible ansible-playbook'
 ```
 
 And then:

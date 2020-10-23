@@ -1,0 +1,23 @@
+name: Update DockerHub Description
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/update-dockerhub-description.yml
+      - README.md
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+
+      - name: Update repository description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: egvimo/ansible

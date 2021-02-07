@@ -1,7 +1,18 @@
-FROM alpine
+FROM ubuntu:latest
 
-RUN apk add --no-cache openssh-client sshpass ansible \
-  && ansible-galaxy collection install community.general
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    openssh-client \
+    python3-dev \
+    python3-setuptools \
+    python3-pip \
+    python3-yaml \
+    sshpass \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install ansible
 
 WORKDIR /ansible
 

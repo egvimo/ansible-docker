@@ -1,6 +1,6 @@
 # Ansible inside Docker
 
-A very simple Docker image to run Ansible commands and playbooks.
+A very simple Docker image to run Ansible commands and playbooks, and Molecule tests.
 
 ## Usage
 
@@ -37,3 +37,9 @@ And then:
 ```shell
 ansible-playbook main.yml
 ```
+
+## License
+
+Copyright © 2020 egvimo.
+
+Licensed under the MIT License. See [LICENSE](LICENSE).

@@ -6,6 +6,8 @@ on:
     paths:
       - .github/workflows/build-docker-image.yml
       - Dockerfile
+  schedule:
+    - cron: "15 3 * * 0"
 
 jobs:
   build:
